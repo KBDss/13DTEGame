@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=3 uid="uid://ds3doyodpcaus"]
+
+[ext_resource type="Script" path="res://node_2d.gd" id="1_7e1xi"]
+[ext_resource type="PackedScene" uid="uid://0w1nyjsbdpb2" path="res://Balloon.tscn" id="2_pinux"]
+[ext_resource type="PackedScene" uid="uid://c3c6r53ebww25" path="res://testlevel.blend" id="3_7h4u6"]
+
+[sub_resource type="Curve2D" id="Curve2D_hi7dd"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 171, 110, 0, 0, 0, 0, 159, 278, 0, 0, 0, 0, 514, 272, 0, 0, 0, 0, 541, 489, 0, 0, 0, 0, 1001, 504, 0, 0, 0, 0, 997, 167, 0, 0, 0, 0, 171, 110)
+}
+point_count = 7
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_7e1xi")
+
+[node name="Path2D" type="Path2D" parent="."]
+curve = SubResource("Curve2D_hi7dd")
+
+[node name="Enemy" parent="Path2D" instance=ExtResource("2_pinux")]
+speed = 5
+
+[node name="Enemy2" parent="Path2D" instance=ExtResource("2_pinux")]
+
+[node name="Enemy3" parent="Path2D" instance=ExtResource("2_pinux")]
+speed = 6
+
+[node name="testlevel" parent="." instance=ExtResource("3_7h4u6")]
