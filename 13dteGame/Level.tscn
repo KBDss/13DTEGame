@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://c8ut0dduiy7sk"]
 
-[ext_resource type="Texture2D" uid="uid://c07pi5dh6q8no" path="res://icon.svg" id="1_05vag"]
 [ext_resource type="Script" path="res://EnemyObject.gd" id="1_fymfn"]
+[ext_resource type="Texture2D" uid="uid://cfqrju8squ4iv" path="res://Miner.png" id="2_8dvbp"]
 [ext_resource type="PackedScene" uid="uid://c3c6r53ebww25" path="res://testlevel.blend" id="2_kdkel"]
 [ext_resource type="PackedScene" uid="uid://l0f7eohfn4m2" path="res://tree.blend" id="4_hnkl0"]
 
@@ -23,15 +23,16 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0680981, 0, 0.0681362)
 curve = SubResource("Curve3D_mgjb0")
 
 [node name="EnemyObject" type="PathFollow3D" parent="Path3D"]
-transform = Transform3D(0.00682439, 3.14368e-05, -0.999975, 1.81899e-12, 1, 3.14375e-05, 0.999976, -2.14544e-07, 0.00682439, -35.1868, 0.000589371, 23.9504)
+transform = Transform3D(0.00682439, 3.14368e-05, -0.999975, 1.81899e-12, 1, 3.14375e-05, 0.999976, -2.14544e-07, 0.00682438, -35.1868, 0.000589371, 23.9504)
 script = ExtResource("1_fymfn")
 speed = 14
 
 [node name="Sprite3D" type="Sprite3D" parent="Path3D/EnemyObject"]
 transform = Transform3D(1, 1.11022e-16, 0, -1.49012e-08, 1, -3.72529e-09, -7.45058e-09, 1.86265e-08, 1, 0, 0.759764, 0)
-pixel_size = 0.05
+pixel_size = 0.3853
 billboard = 1
-texture = ExtResource("1_05vag")
+double_sided = false
+texture = ExtResource("2_8dvbp")
 
 [node name="testlevel" parent="." instance=ExtResource("2_kdkel")]
 
