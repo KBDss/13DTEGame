@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://cy0w3l282wc2o"]
+
+[ext_resource type="Script" path="res://EnemyObject.gd" id="1_gch3w"]
+[ext_resource type="Texture2D" uid="uid://uuod0lc15dfh" path="res://MinerReal.png" id="2_lvuj1"]
+
+[node name="Enemy" type="PathFollow3D"]
+transform = Transform3D(-0.00381753, 9.24884e-06, -0.999975, 0, 0.999985, 9.24889e-06, 0.999976, 3.53086e-08, -0.00381753, 0, 0, 0)
+script = ExtResource("1_gch3w")
+speed = 14
+
+[node name="Sprite3D2" type="Sprite3D" parent="."]
+transform = Transform3D(-0.00381752, 9.23022e-06, -0.999975, -1.49015e-08, 0.999985, 9.24516e-06, 0.999976, 3.52373e-08, -0.00381752, 0, 0, 0)
+pixel_size = 0.125
+billboard = 1
+double_sided = false
+no_depth_test = true
+texture_filter = 0
+texture = ExtResource("2_lvuj1")

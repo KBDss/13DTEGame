@@ -1,0 +1,44 @@
+[gd_scene load_steps=2 format=3 uid="uid://dxbk1wcf7ycp0"]
+
+[ext_resource type="PackedScene" uid="uid://cou8tqd3rsgub" path="res://swaying_tree.tscn" id="1_0bl4s"]
+
+[node name="TreeClump" type="Node3D"]
+
+[node name="SwayingTree" parent="." instance=ExtResource("1_0bl4s")]
+transform = Transform3D(0.485, 0, 0, 0, 0.484335, -0.0253829, 0, 0.0253829, 0.484335, 1.53836, 0, -0.769183)
+
+[node name="SwayingTree2" parent="." instance=ExtResource("1_0bl4s")]
+transform = Transform3D(0.485, 0, 0, 0, 0.484335, -0.0253829, 0, 0.0253829, 0.484335, -1.07692, 0, 4.83661)
+
+[node name="SwayingTree3" parent="." instance=ExtResource("1_0bl4s")]
+transform = Transform3D(0.485, 0, 0, 0, 0.484335, -0.0253829, 0, 0.0253829, 0.484335, 5.87033, 0, 1.88011)
+
+[node name="SwayingTree4" parent="." instance=ExtResource("1_0bl4s")]
+transform = Transform3D(0.485, 0, 0, 0, 0.484335, -0.0253829, 0, 0.0253829, 0.484335, -3.65911, 0, 0.539163)
+
+[node name="SwayingTree5" parent="." instance=ExtResource("1_0bl4s")]
+transform = Transform3D(0.485, 0, 0, 0, 0.484335, -0.0253829, 0, 0.0253829, 0.484335, -3.34004, 0, -4.35185)
+
+[node name="SwayingTree6" parent="." instance=ExtResource("1_0bl4s")]
+transform = Transform3D(0.485, 0, 0, 0, 0.484335, -0.0253829, 0, 0.0253829, 0.484335, 1.71589, 0, -5.60481)
+
+[node name="SwayingTree7" parent="." instance=ExtResource("1_0bl4s")]
+transform = Transform3D(0.485, 0, 0, 0, 0.484335, -0.0253829, 0, 0.0253829, 0.484335, 6.59582, 0, -2.83511)
+
+[node name="SwayingTree8" parent="." instance=ExtResource("1_0bl4s")]
+transform = Transform3D(0.485, 0, 0, 0, 0.484335, -0.0253829, 0, 0.0253829, 0.484335, -6.10963, 0, 4.92477)
+
+[node name="SwayingTree9" parent="." instance=ExtResource("1_0bl4s")]
+transform = Transform3D(0.485, 0, 0, 0, 0.484335, -0.0253829, 0, 0.0253829, 0.484335, -2.96621, 0, -9.56151)
+
+[node name="SwayingTree10" parent="." instance=ExtResource("1_0bl4s")]
+transform = Transform3D(0.485, 0, 0, 0, 0.484335, -0.0253829, 0, 0.0253829, 0.484335, 6.20016, -5.96046e-08, -8.70422)
+
+[node name="SwayingTree11" parent="." instance=ExtResource("1_0bl4s")]
+transform = Transform3D(0.485, 0, 0, 0, 0.484335, -0.0253829, 0, 0.0253829, 0.484335, 3.74963, 0, 6.47443)
+
+[node name="SwayingTree12" parent="." instance=ExtResource("1_0bl4s")]
+transform = Transform3D(0.485, 0, 0, 0, 0.484335, -0.0253829, 0, 0.0253829, 0.484335, -7.7802, 0, -7.91288)
+
+[node name="SwayingTree13" parent="." instance=ExtResource("1_0bl4s")]
+transform = Transform3D(0.485, 0, 0, 0, 0.484335, -0.0253829, 0, 0.0253829, 0.484335, -7.64862, 0, -2.54949)

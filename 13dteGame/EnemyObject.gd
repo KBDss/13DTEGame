@@ -8,4 +8,9 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	progress+=speed * delta
+	
+	progress_ratio+= 1.0/speed* delta
+	if progress_ratio >=1:
+		queue_free()
+
+
