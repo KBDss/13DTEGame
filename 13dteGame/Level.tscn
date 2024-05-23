@@ -30,7 +30,7 @@ script = ExtResource("1_2isvb")
 enemyPrefab = ExtResource("1_weymr")
 
 [node name="EnemyObject" parent="Path3DAndSpawner" instance=ExtResource("1_weymr")]
-transform = Transform3D(-0.0038175, 9.24878e-06, -0.999972, 0, 0.999978, 9.24886e-06, 0.999969, 3.53083e-08, -0.00381751, -64.382, 0.000610352, 23.7195)
+transform = Transform3D(0.00354586, 6.84918e-06, -0.999973, 0, 0.999978, 6.84924e-06, 0.99997, -2.4287e-08, 0.00354587, -76.3929, 0.000610352, 20.7029)
 
 [node name="Timer" type="Timer" parent="Path3DAndSpawner"]
 autostart = true

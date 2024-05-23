@@ -1,7 +1,9 @@
 [gd_scene load_steps=2 format=3 uid="uid://bbkbe58aesi5s"]
 
-[ext_resource type="Texture2D" uid="uid://c07pi5dh6q8no" path="res://icon.svg" id="1_mgo0m"]
+[ext_resource type="Texture2D" uid="uid://dr2yo1y1vnask" path="res://towerpng.png" id="1_fk8ug"]
 
 [node name="Tower" type="Sprite3D"]
+transform = Transform3D(4.02, 0, 0, 0, 4.02, 0, 0, 0, 4.02, 0, 0, 0)
 billboard = 1
-texture = ExtResource("1_mgo0m")
+texture_filter = 2
+texture = ExtResource("1_fk8ug")
