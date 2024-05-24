@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://c8ut0dduiy7sk"]
+[gd_scene load_steps=12 format=3 uid="uid://c8ut0dduiy7sk"]
 
 [ext_resource type="Script" path="res://Path3DAndSpawner.gd" id="1_2isvb"]
 [ext_resource type="PackedScene" uid="uid://cy0w3l282wc2o" path="res://Enemy.tscn" id="1_weymr"]
@@ -8,18 +8,34 @@
 [ext_resource type="PackedScene" uid="uid://cou8tqd3rsgub" path="res://swaying_tree.tscn" id="6_wjj4k"]
 [ext_resource type="Script" path="res://towerSpawner.gd" id="7_qlh5i"]
 
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_fs8tw"]
+sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+
+[sub_resource type="Sky" id="Sky_ypdlw"]
+sky_material = SubResource("ProceduralSkyMaterial_fs8tw")
+
+[sub_resource type="Environment" id="Environment_o1rjl"]
+background_mode = 2
+sky = SubResource("Sky_ypdlw")
+tonemap_mode = 2
+glow_enabled = true
+
 [sub_resource type="Curve3D" id="Curve3D_mgjb0"]
 _data = {
-"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -76.3929, 0.000610352, 20.7029, 0, 0, 0, 0, 0, 0, -22.9269, 0.000244141, 20.5133, 0, 0, 0, 0, 0, 0, -22.7373, 0.0684814, -20.2498, 0, 0, 0, 0, 0, 0, 31.2975, 0.0405273, -20.4394, 0, 0, 0, 0, 0, 0, 32.0559, 0.117432, 30.3723, 0, 0, 0, 0, 0, 0, -4.53613, 0.0266113, 30.941, 0, 0, 0, 0, 0, 0, -4.34653, 0, 44.9711),
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -77.1497, 0.000610352, 20.3005, 0, 0, 0, 0, 0, 0, -22.9269, 0.000244141, 20.5133, 0, 0, 0, 0, 0, 0, -22.7373, 0.0684814, -20.2498, 0, 0, 0, 0, 0, 0, 31.2975, 0.0405273, -20.4394, 0, 0, 0, 0, 0, 0, 32.0559, 0.117432, 30.3723, 0, 0, 0, 0, 0, 0, -4.53613, 0.0266113, 30.941, 0, 0, 0, 0, 0, 0, -4.34653, 0, 44.9711),
 "tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0, 0)
 }
 point_count = 7
 
 [node name="Node3D" type="Node3D"]
 
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_o1rjl")
+
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75, -0.433013, -191.318, 59.517, 10.0637)
-light_energy = 2.786
+light_energy = 1.332
 shadow_enabled = true
 directional_shadow_max_distance = 298.1
 
@@ -30,7 +46,7 @@ script = ExtResource("1_2isvb")
 enemyPrefab = ExtResource("1_weymr")
 
 [node name="EnemyObject" parent="Path3DAndSpawner" instance=ExtResource("1_weymr")]
-transform = Transform3D(0.00354586, 6.84918e-06, -0.999973, 0, 0.999978, 6.84924e-06, 0.99997, -2.4287e-08, 0.00354587, -76.3929, 0.000610352, 20.7029)
+transform = Transform3D(-0.00392514, 6.75356e-06, -0.999972, -2.27368e-13, 0.999978, 6.75363e-06, 0.999969, 2.65098e-08, -0.00392516, -77.1497, 0.000610352, 20.3005)
 
 [node name="Timer" type="Timer" parent="Path3DAndSpawner"]
 autostart = true
@@ -73,6 +89,12 @@ transform = Transform3D(-0.978796, -0.0109631, 0.204544, 0, 0.998567, 0.0535211,
 [node name="TreeClump13" parent="TreeClumps" instance=ExtResource("5_d5gox")]
 transform = Transform3D(-0.99801, 0.00337461, -0.0629616, -3.85904e-10, 0.998567, 0.0535211, 0.0630519, 0.0534146, -0.99658, 59.7473, 0, -37.3993)
 
+[node name="TreeClump16" parent="TreeClumps" instance=ExtResource("5_d5gox")]
+transform = Transform3D(0.981527, 0.0102398, -0.191049, -2.16298e-09, 0.998567, 0.0535211, 0.191323, -0.0525324, 0.98012, 64.6237, 0, -13.5048)
+
+[node name="TreeClump17" parent="TreeClumps" instance=ExtResource("5_d5gox")]
+transform = Transform3D(0.981527, 0.0102398, -0.191049, -2.16298e-09, 0.998567, 0.0535211, 0.191323, -0.0525324, 0.98012, 64.6237, 0, -13.5048)
+
 [node name="TreeClump10" parent="TreeClumps" instance=ExtResource("5_d5gox")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 46.586, 0, -12.4865)
 
@@ -100,13 +122,13 @@ transform = Transform3D(0.485, 0, 0, 0, 0.484335, -0.0253829, 0, 0.0253829, 0.48
 transform = Transform3D(0.485, 0, 0, 0, 0.484335, -0.0253829, 0, 0.0253829, 0.484335, 5.47835, 0, 2.88956)
 
 [node name="SwayingTree4" parent="SingleTrees" instance=ExtResource("6_wjj4k")]
-transform = Transform3D(0.485, 0, 0, 0, 0.484335, -0.0253829, 0, 0.0253829, 0.484335, 4.52803, 0, -1.81404)
+transform = Transform3D(0.485, 0, 0, 0, 0.484335, -0.0253829, 0, 0.0253829, 0.484335, 3.811, 0, -1.81404)
 
 [node name="SwayingTree5" parent="SingleTrees" instance=ExtResource("6_wjj4k")]
 transform = Transform3D(0.485, 0, 0, 0, 0.484335, -0.0253829, 0, 0.0253829, 0.484335, 4.78873, 0, -7.34516)
 
 [node name="SwayingTree6" parent="SingleTrees" instance=ExtResource("6_wjj4k")]
-transform = Transform3D(0.485, 0, 0, 0, 0.484335, -0.0253829, 0, 0.0253829, 0.484335, 17.6243, 0, 12.2473)
+transform = Transform3D(0.485, 0, 0, 0, 0.484335, -0.0253829, 0, 0.0253829, 0.484335, 11.9242, 0, 5.49568)
 
 [node name="SwayingTree7" parent="SingleTrees" instance=ExtResource("6_wjj4k")]
 transform = Transform3D(0.485, 0, 0, 0, 0.484335, -0.0253829, 0, 0.0253829, 0.484335, -42.8309, 0, -5.80622)
@@ -122,6 +144,96 @@ transform = Transform3D(0.485, 0, 0, 0, 0.484335, -0.0253829, 0, 0.0253829, 0.48
 
 [node name="SwayingTree11" parent="SingleTrees" instance=ExtResource("6_wjj4k")]
 transform = Transform3D(0.485, 0, 0, 0, 0.484335, -0.0253829, 0, 0.0253829, 0.484335, 8.59732, 0, -39.8455)
+
+[node name="SwayingTree18" parent="SingleTrees" instance=ExtResource("6_wjj4k")]
+transform = Transform3D(0.485, 0, 0, 0, 0.484335, -0.0253829, 0, 0.0253829, 0.484335, 37.5857, 0, -26.8366)
+
+[node name="SwayingTree19" parent="SingleTrees" instance=ExtResource("6_wjj4k")]
+transform = Transform3D(0.485, 0, 0, 0, 0.484335, -0.0253829, 0, 0.0253829, 0.484335, 41.7855, 0, 34.623)
+
+[node name="SwayingTree20" parent="SingleTrees" instance=ExtResource("6_wjj4k")]
+transform = Transform3D(0.485, 0, 0, 0, 0.484335, -0.0253829, 0, 0.0253829, 0.484335, 46.1901, 0, 34.7254)
+
+[node name="SwayingTree21" parent="SingleTrees" instance=ExtResource("6_wjj4k")]
+transform = Transform3D(0.485, 0, 0, 0, 0.484335, -0.0253829, 0, 0.0253829, 0.484335, 4.8073, 0, -11.4717)
+
+[node name="SwayingTree22" parent="SingleTrees" instance=ExtResource("6_wjj4k")]
+transform = Transform3D(0.485, 0, 0, 0, 0.484335, -0.0253829, 0, 0.0253829, 0.484335, 5.93406, 0, 7.17105)
+
+[node name="SwayingTree23" parent="SingleTrees" instance=ExtResource("6_wjj4k")]
+transform = Transform3D(0.485, 0, 0, 0, 0.484335, -0.0253829, 0, 0.0253829, 0.484335, 6.65109, 0, 12.0878)
+
+[node name="SwayingTree24" parent="SingleTrees" instance=ExtResource("6_wjj4k")]
+transform = Transform3D(0.105039, -0.0247805, -0.47284, 0, 0.484335, -0.0253829, 0.473489, 0.00549733, 0.104895, 8.59731, 0, -2.04788)
+
+[node name="SwayingTree25" parent="SingleTrees" instance=ExtResource("6_wjj4k")]
+transform = Transform3D(0.105039, -0.0247805, -0.47284, 0, 0.484335, -0.0253829, 0.473489, 0.00549733, 0.104895, -11.0697, 0, 4.8151)
+
+[node name="SwayingTree13" parent="SingleTrees" instance=ExtResource("6_wjj4k")]
+transform = Transform3D(0.485, 0, 0, 0, 0.484335, -0.0253829, 0, 0.0253829, 0.484335, -31.0441, 0, -23.9685)
+
+[node name="SwayingTree14" parent="SingleTrees" instance=ExtResource("6_wjj4k")]
+transform = Transform3D(0.485, 0, 0, 0, 0.484335, -0.0253829, 0, 0.0253829, 0.484335, -39.8533, 0, -27.5536)
+
+[node name="SwayingTree15" parent="SingleTrees" instance=ExtResource("6_wjj4k")]
+transform = Transform3D(0.485, 0, 0, 0, 0.484335, -0.0253829, 0, 0.0253829, 0.484335, -51.0184, 0, -29.6022)
+
+[node name="SwayingTree17" parent="SingleTrees" instance=ExtResource("6_wjj4k")]
+transform = Transform3D(0.485, 0, 0, 0, 0.484335, -0.0253829, 0, 0.0253829, 0.484335, -31.5563, 0, -33.802)
+
+[node name="SwayingTree26" parent="SingleTrees" instance=ExtResource("6_wjj4k")]
+transform = Transform3D(0.485, 0, 0, 0, 0.484335, -0.0253829, 0, 0.0253829, 0.484335, 55.5693, 0, -4.70594)
+
+[node name="SwayingTree27" parent="SingleTrees" instance=ExtResource("6_wjj4k")]
+transform = Transform3D(0.485, 0, 0, 0, 0.484335, -0.0253829, 0, 0.0253829, 0.484335, 59.7956, 0, -4.70594)
+
+[node name="SwayingTree28" parent="SingleTrees" instance=ExtResource("6_wjj4k")]
+transform = Transform3D(0.485, 0, 0, 0, 0.484335, -0.0253829, 0, 0.0253829, 0.484335, 56.2195, 0, 0.170492)
+
+[node name="SwayingTree29" parent="SingleTrees" instance=ExtResource("6_wjj4k")]
+transform = Transform3D(0.485, 0, 0, 0, 0.484335, -0.0253829, 0, 0.0253829, 0.484335, 57.3573, 0, 6.6724)
+
+[node name="SwayingTree30" parent="SingleTrees" instance=ExtResource("6_wjj4k")]
+transform = Transform3D(0.485, 0, 0, 0, 0.484335, -0.0253829, 0, 0.0253829, 0.484335, 57.3573, 0, 11.6724)
+
+[node name="SwayingTree31" parent="SingleTrees" instance=ExtResource("6_wjj4k")]
+transform = Transform3D(0.485, 0, 0, 0, 0.484335, -0.0253829, 0, 0.0253829, 0.484335, 61.5836, 0, 12.9728)
+
+[node name="SwayingTree32" parent="SingleTrees" instance=ExtResource("6_wjj4k")]
+transform = Transform3D(0.485, 0, 0, 0, 0.484335, -0.0253829, 0, 0.0253829, 0.484335, 58.1701, 0, 17.199)
+
+[node name="SwayingTree33" parent="SingleTrees" instance=ExtResource("6_wjj4k")]
+transform = Transform3D(0.485, 0, 0, 0, 0.484335, -0.0253829, 0, 0.0253829, 0.484335, 57.845, 0, 22.0754)
+
+[node name="SwayingTree34" parent="SingleTrees" instance=ExtResource("6_wjj4k")]
+transform = Transform3D(0.485, 0, 0, 0, 0.484335, -0.0253829, 0, 0.0253829, 0.484335, -47.811, 0, 1.91953)
+
+[node name="SwayingTree35" parent="SingleTrees" instance=ExtResource("6_wjj4k")]
+transform = Transform3D(0.485, 0, 0, 0, 0.484335, -0.0253829, 0, 0.0253829, 0.484335, -50.4118, 0, 10.6971)
+
+[node name="SwayingTree36" parent="SingleTrees" instance=ExtResource("6_wjj4k")]
+transform = Transform3D(0.485, 0, 0, 0, 0.484335, -0.0253829, 0, 0.0253829, 0.484335, -50.8994, 0, 4.68284)
+
+[node name="SwayingTree37" parent="SingleTrees" instance=ExtResource("6_wjj4k")]
+transform = Transform3D(0.485, 0, 0, 0, 0.484335, -0.0253829, 0, 0.0253829, 0.484335, -47.1608, 0, -7.34568)
+
+[node name="SwayingTree38" parent="SingleTrees" instance=ExtResource("6_wjj4k")]
+transform = Transform3D(0.485, 0, 0, 0, 0.484335, -0.0253829, 0, 0.0253829, 0.484335, 48.2547, 0, -22.3001)
+
+[node name="SwayingTree39" parent="SingleTrees" instance=ExtResource("6_wjj4k")]
+transform = Transform3D(0.485, 0, 0, 0, 0.484335, -0.0253829, 0, 0.0253829, 0.484335, 51.6682, 0, -25.2259)
+
+[node name="SwayingTree40" parent="SingleTrees" instance=ExtResource("6_wjj4k")]
+transform = Transform3D(0.485, 0, 0, 0, 0.484335, -0.0253829, 0, 0.0253829, 0.484335, 58.6577, 0, -26.8514)
+
+[node name="SwayingTree41" parent="SingleTrees" instance=ExtResource("6_wjj4k")]
+transform = Transform3D(0.485, 0, 0, 0, 0.484335, -0.0253829, 0, 0.0253829, 0.484335, 11.844, 0, -27.8267)
+
+[node name="SwayingTree50" parent="SingleTrees" instance=ExtResource("6_wjj4k")]
+transform = Transform3D(0.485, 0, 0, 0, 0.484335, -0.0253829, 0, 0.0253829, 0.484335, -47.1608, 0, -29.4522)
+
+[node name="SwayingTree51" parent="SingleTrees" instance=ExtResource("6_wjj4k")]
+transform = Transform3D(0.485, 0, 0, 0, 0.484335, -0.0253829, 0, 0.0253829, 0.484335, -43.5847, 0, -29.7773)
 
 [node name="Rocks" type="Node" parent="."]
 
@@ -160,6 +272,9 @@ transform = Transform3D(7.78655, 0, -0.457838, 0, 7.8, 0, 0.457838, 0, 7.78655, 
 
 [node name="Rock17" parent="Rocks" instance=ExtResource("5_x3dss")]
 transform = Transform3D(7.78655, 0, -0.457838, 0, 7.8, 0, 0.457838, 0, 7.78655, -71.5566, 1.90735e-06, -9.34946)
+
+[node name="Rock18" parent="Rocks" instance=ExtResource("5_x3dss")]
+transform = Transform3D(3.37321, 0, -7.03288, 0, 7.8, 0, 7.03288, 0, 3.37321, -74.3223, 1.90735e-06, -39.5671)
 
 [node name="Rock16" parent="Rocks" instance=ExtResource("5_x3dss")]
 transform = Transform3D(7.78655, 0, -0.457838, 0, 7.8, 0, 0.457838, 0, 7.78655, -33.301, 6.68628, 53.75)
