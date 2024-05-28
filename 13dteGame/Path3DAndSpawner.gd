@@ -18,7 +18,7 @@ extends Path3D
 func spawn_enemy():
 	# Instantiate the enemy scene
 	var enemy = enemyPrefab.instantiate()
-
+	print("Spawn enemy")
 	# Add the enemy to the scene
 	add_child(enemy)
 

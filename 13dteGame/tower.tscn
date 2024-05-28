@@ -1,9 +1,21 @@
-[gd_scene load_steps=2 format=3 uid="uid://bbkbe58aesi5s"]
+[gd_scene load_steps=4 format=3 uid="uid://bbkbe58aesi5s"]
 
-[ext_resource type="Texture2D" uid="uid://dr2yo1y1vnask" path="res://towerpng.png" id="1_fk8ug"]
+[ext_resource type="Script" path="res://tower.gd" id="1_7l465"]
+[ext_resource type="Texture2D" path="res://towerpng.png" id="1_fk8ug"]
 
-[node name="Tower" type="Sprite3D"]
+[sub_resource type="SphereShape3D" id="SphereShape3D_fs0ex"]
+radius = 25.4914
+
+[node name="Tower" type="Area3D"]
+script = ExtResource("1_7l465")
+
+[node name="Tower" type="Sprite3D" parent="."]
 transform = Transform3D(23.96, 0, 0, 0, 23.96, 0, 0, 0, 23.96, 0, 0, 0)
 billboard = 1
 texture_filter = 0
 texture = ExtResource("1_fk8ug")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("SphereShape3D_fs0ex")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
