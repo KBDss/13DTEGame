@@ -1,8 +1,8 @@
-extends Path3D
+extends Path2D
 
 
 # Declare variables
-@export var enemyPrefab : Resource# Enemy object to spawn
+@export var enemyPrefab = preload("res://enemy_2d.tscn")
 @onready var spawnTimer = $Timer
 
 # Called when the node enters the scene tree for the first time
@@ -23,6 +23,7 @@ func spawn_enemy():
 	add_child(enemy)
 
 
+
+
 func _on_timer_timeout():
 	spawn_enemy()
-

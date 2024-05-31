@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://dvjs51xoe51tb"]
+
+[ext_resource type="Texture2D" uid="uid://db25tf7yk1u0u" path="res://Sprites/Background.PNG" id="1_umq6u"]
+[ext_resource type="PackedScene" uid="uid://dlgkoso5brawn" path="res://enemy_2d.tscn" id="2_ri1ji"]
+[ext_resource type="Script" path="res://Path2DandSpawner.gd" id="2_u6lr0"]
+
+[sub_resource type="Curve2D" id="Curve2D_4wpo5"]
+_data = {
+"points": PackedVector2Array(-1.49831, 4.49492, 1.49831, -4.49492, 0, 500, 0, 0, 0, 0, 392, 497, 0, 0, 0, 0, 393, 155, 0, 0, 0, 0, 825, 155, 0, 0, 0, 0, 831, 583, 0, 0, 0, 0, 541, 585, 0, 0, 0, 0, 541, 643)
+}
+point_count = 7
+
+[node name="Level2D" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(575, 323)
+scale = Vector2(0.6, 0.630648)
+texture = ExtResource("1_umq6u")
+
+[node name="Path2DandSpawner" type="Path2D" parent="."]
+curve = SubResource("Curve2D_4wpo5")
+script = ExtResource("2_u6lr0")
+
+[node name="Enemy2D" parent="Path2DandSpawner" instance=ExtResource("2_ri1ji")]
+position = Vector2(0, 500)
+
+[node name="Timer" type="Timer" parent="Path2DandSpawner"]
+wait_time = 0.5
+autostart = true
+
+[connection signal="timeout" from="Path2DandSpawner/Timer" to="Path2DandSpawner" method="_on_timer_timeout"]

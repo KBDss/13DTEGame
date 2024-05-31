@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://if1hnnjs45vv"
-path="res://.godot/imported/towerpng.png-68be384d2d14f18671bbc28620a78273.ctex"
+uid="uid://db25tf7yk1u0u"
+path="res://.godot/imported/Background.PNG-24299ad5eae445f88b546850a0cdac1b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/towerpng.png"
-dest_files=["res://.godot/imported/towerpng.png-68be384d2d14f18671bbc28620a78273.ctex"]
+source_file="res://Sprites/Background.PNG"
+dest_files=["res://.godot/imported/Background.PNG-24299ad5eae445f88b546850a0cdac1b.ctex"]
 
 [params]
 

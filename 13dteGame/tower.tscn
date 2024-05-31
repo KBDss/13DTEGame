@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://bbkbe58aesi5s"]
 
 [ext_resource type="Script" path="res://tower.gd" id="1_7l465"]
-[ext_resource type="Texture2D" path="res://towerpng.png" id="1_fk8ug"]
+[ext_resource type="Texture2D" uid="uid://if1hnnjs45vv" path="res://towerpng.png" id="2_yybli"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_fs0ex"]
 radius = 25.4914
@@ -13,7 +13,7 @@ script = ExtResource("1_7l465")
 transform = Transform3D(23.96, 0, 0, 0, 23.96, 0, 0, 0, 23.96, 0, 0, 0)
 billboard = 1
 texture_filter = 0
-texture = ExtResource("1_fk8ug")
+texture = ExtResource("2_yybli")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("SphereShape3D_fs0ex")

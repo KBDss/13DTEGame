@@ -14,8 +14,7 @@ func _process(delta):
 func _on_area_entered(area):
 	if area.is_in_group("Enemy"):
 		var instance = bullet.instantiate()
-		instance.position = global_position
-		instance.look_at(area.global_position)
+		instance.global_transform = global_transform
 		add_sibling(instance) 
 		 #create bullet
 		# rotate bullet to enemy
