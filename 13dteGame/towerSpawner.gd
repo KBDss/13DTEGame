@@ -28,7 +28,7 @@ func _process(delta):
 			tower_instance = null
 
 func get_global_mouse_position_3d():
-	var camera = get_viewport().get_camera_3d()
+	var camera = get_viewport().get_camera_2d()
 	
 	var mouse_pos = get_viewport().get_mouse_position()
 
