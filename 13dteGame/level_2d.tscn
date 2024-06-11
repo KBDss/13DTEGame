@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://dvjs51xoe51tb"]
+[gd_scene load_steps=7 format=3 uid="uid://dvjs51xoe51tb"]
 
 [ext_resource type="Texture2D" uid="uid://db25tf7yk1u0u" path="res://Sprites/Background.PNG" id="1_umq6u"]
 [ext_resource type="PackedScene" uid="uid://dlgkoso5brawn" path="res://enemy_2d.tscn" id="2_ri1ji"]
 [ext_resource type="Script" path="res://Path2DandSpawner.gd" id="2_u6lr0"]
 [ext_resource type="Script" path="res://TowerController.gd" id="4_yofgj"]
+[ext_resource type="Script" path="res://Label.gd" id="5_hbe2a"]
 
 [sub_resource type="Curve2D" id="Curve2D_4wpo5"]
 _data = {
@@ -32,10 +33,23 @@ autostart = true
 [node name="TowerController" type="Node2D" parent="."]
 script = ExtResource("4_yofgj")
 
-[node name="Control" type="Control" parent="."]
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Control" type="Control" parent="CanvasLayer"]
 layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="CanvasLayer/Control"]
+layout_mode = 1
+offset_left = 31.0
+offset_top = 24.0
+offset_right = 125.0
+offset_bottom = 53.0
+script = ExtResource("5_hbe2a")
+metadata/_edit_use_anchors_ = true
 
 [connection signal="timeout" from="Path2DandSpawner/Timer" to="Path2DandSpawner" method="_on_timer_timeout"]
