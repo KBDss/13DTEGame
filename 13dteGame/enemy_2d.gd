@@ -17,3 +17,9 @@ func _process(delta):
 func damage(dmg = 1):
 	health -= dmg
 	#check if health less than zero and delete from scene if so
+	if health <= 0:
+		queue_free()
+
+
+func _on_area_2d_area_entered(area):
+	pass # Replace with function body.
