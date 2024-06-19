@@ -10,7 +10,6 @@ func _input(event):
 			PlayerStats.money-= 100
 			tower_instance = tower_scene.instantiate()
 			add_child(tower_instance)
-		
 
 	if tower_instance:
 		#print("update position")

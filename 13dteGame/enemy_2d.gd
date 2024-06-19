@@ -1,5 +1,6 @@
 extends PathFollow2D
-var health = 2
+@export var health = 2
+@export var money_value = 50
 @export var speed :float = 0.1
 
 # Called when the node enters the scene tree for the first time.
@@ -19,7 +20,11 @@ func damage(dmg = 1):
 	#check if health less than zero and delete from scene if so
 	if health <= 0:
 		queue_free()
+		PlayerStats.add_money(money_value)
+		
 
 
 func _on_area_2d_area_entered(area):
-	pass
+	if area.is_in_group("Bullet"):
+		damage(area.damage)
+		area.queue_free()

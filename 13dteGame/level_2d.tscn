@@ -27,7 +27,7 @@ script = ExtResource("2_u6lr0")
 position = Vector2(0, 500)
 
 [node name="Timer" type="Timer" parent="Path2DandSpawner"]
-wait_time = 0.5
+wait_time = 3.0
 autostart = true
 
 [node name="TowerController" type="Node2D" parent="."]
