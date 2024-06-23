@@ -21,6 +21,9 @@ func _on_area_entered(area):
 	if area.is_in_group("Enemy") and is_placed == true:
 		target = area
 		print("shoot")
+	elif area.is_in_group("Enemy_Strong") and is_placed == true:
+		target = area
+		print("shoot")
 
 
 func _on_timer_timeout():

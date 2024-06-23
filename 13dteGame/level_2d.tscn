@@ -1,7 +1,6 @@
-[gd_scene load_steps=7 format=3 uid="uid://dvjs51xoe51tb"]
+[gd_scene load_steps=6 format=3 uid="uid://dvjs51xoe51tb"]
 
 [ext_resource type="Texture2D" uid="uid://db25tf7yk1u0u" path="res://Sprites/Background.PNG" id="1_umq6u"]
-[ext_resource type="PackedScene" uid="uid://dlgkoso5brawn" path="res://enemy_2d.tscn" id="2_ri1ji"]
 [ext_resource type="Script" path="res://Path2DandSpawner.gd" id="2_u6lr0"]
 [ext_resource type="Script" path="res://TowerController.gd" id="4_yofgj"]
 [ext_resource type="Script" path="res://Label.gd" id="5_hbe2a"]
@@ -23,12 +22,17 @@ texture = ExtResource("1_umq6u")
 curve = SubResource("Curve2D_4wpo5")
 script = ExtResource("2_u6lr0")
 
-[node name="Enemy2D" parent="Path2DandSpawner" instance=ExtResource("2_ri1ji")]
-position = Vector2(0, 500)
-
-[node name="Timer" type="Timer" parent="Path2DandSpawner"]
+[node name="EngineerTimer" type="Timer" parent="Path2DandSpawner"]
 wait_time = 3.0
 autostart = true
+
+[node name="StrongWaveTimerStart" type="Timer" parent="Path2DandSpawner"]
+wait_time = 10.0
+one_shot = true
+autostart = true
+
+[node name="StrongTimer" type="Timer" parent="Path2DandSpawner/StrongWaveTimerStart"]
+wait_time = 5.0
 
 [node name="TowerController" type="Node2D" parent="."]
 script = ExtResource("4_yofgj")
@@ -53,4 +57,6 @@ theme_override_colors/font_color = Color(0.980392, 0, 0, 1)
 script = ExtResource("5_hbe2a")
 metadata/_edit_use_anchors_ = true
 
-[connection signal="timeout" from="Path2DandSpawner/Timer" to="Path2DandSpawner" method="_on_timer_timeout"]
+[connection signal="timeout" from="Path2DandSpawner/EngineerTimer" to="Path2DandSpawner" method="_on_timer_timeout"]
+[connection signal="timeout" from="Path2DandSpawner/StrongWaveTimerStart" to="Path2DandSpawner" method="_on_strong_wave_timer_start_timeout"]
+[connection signal="timeout" from="Path2DandSpawner/StrongWaveTimerStart/StrongTimer" to="Path2DandSpawner" method="_on_strong_timer_timeout"]
