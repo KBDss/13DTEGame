@@ -1,5 +1,5 @@
 extends Node
-var money = 500
+var money = 100
 
 func add_money(amount):
 	money += amount

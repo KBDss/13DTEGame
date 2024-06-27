@@ -1,6 +1,6 @@
 extends PathFollow2D
 @export var health = 7
-@export var money_value = 100
+@export var money_value = 50
 @export var speed :float = 0.05
 
 # Called when the node enters the scene tree for the first time.

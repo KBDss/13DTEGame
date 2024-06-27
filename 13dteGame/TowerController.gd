@@ -2,13 +2,13 @@ extends Node2D
 
 var tower_scene = preload("res://tower_2d.tscn")
 var tower_instance = null
-var placing = false
+#var placing = false
 func _input(event):
 	
-	if event is InputEventKey and Input.is_action_pressed("new_tower"):
+	if event is InputEventKey and Input.is_action_pressed("new_tower") and PlayerStats.money >= 100:
 		if not tower_instance:
-			PlayerStats.money-= 100
 			tower_instance = tower_scene.instantiate()
+			tower_instance.place()
 			add_child(tower_instance)
 
 	if tower_instance:
@@ -21,5 +21,6 @@ func _input(event):
 
 	if Input.is_action_pressed("ui_accept") and tower_instance:
 		tower_instance = null
+		PlayerStats.money-= 100
 			# Snap to grid, change 1 to your desired grid size in 3D
 			

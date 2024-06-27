@@ -2,6 +2,7 @@ extends Area2D
 var target = null
 var is_placed = false
 const BULLET = preload("res://bullet.tscn")
+var targets = [] 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
@@ -9,21 +10,23 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	if target:
-		pass
+	if target == null and len(targets)>0:
+		get_target()
+		
 		#shoot at target
-	if Input.is_action_just_pressed("ui_accept"):
-		if is_placed != true:
-			is_placed = true
-
+func get_target():
+	target = targets.pop_front()
+func place():
+	is_placed = true
 
 func _on_area_entered(area):
 	if area.is_in_group("Enemy") and is_placed == true:
-		target = area
+		targets.append(area)
 		print("shoot")
 	elif area.is_in_group("Enemy_Strong") and is_placed == true:
-		target = area
+		targets.append(area)
 		print("shoot")
+	
 
 
 func _on_timer_timeout():
