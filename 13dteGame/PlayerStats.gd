@@ -1,5 +1,7 @@
 extends Node
 var money = 100
+var enemys_killed = 0
+
 
 func add_money(amount):
 	money += amount

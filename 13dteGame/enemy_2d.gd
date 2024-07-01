@@ -20,7 +20,8 @@ func damage(dmg = 1):
 	if health <= 0:
 		queue_free()
 		PlayerStats.add_money(money_value)
-		
+		PlayerStats.enemys_killed += 1
+		print(PlayerStats.enemys_killed)
 
 
 func _on_area_2d_area_entered(area):
