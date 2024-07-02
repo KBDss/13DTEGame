@@ -3,6 +3,9 @@ var target = null
 var is_placed = false
 const BULLET = preload("res://bullet.tscn")
 var targets = [] 
+@onready var targeting = $Targeting
+@onready var line_2d = $Line2D
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
@@ -12,21 +15,25 @@ func _ready():
 func _process(delta):
 	if target == null and len(targets)>0:
 		get_target()
+
 		
 		#shoot at target
 func get_target():
 	target = targets.pop_front()
+	
 func place():
 	is_placed = true
 
 func _on_area_entered(area):
 	if area.is_in_group("Enemy") and is_placed == true:
 		targets.append(area)
-		print("shoot")
+	
+		#print("shoot")
 	elif area.is_in_group("Enemy_Strong") and is_placed == true:
 		targets.append(area)
-		print("shoot")
+		#print("shoot")
 	
+
 
 
 func _on_timer_timeout():
@@ -35,3 +42,14 @@ func _on_timer_timeout():
 		add_child(bullet)
 		bullet.global_position = global_position
 		bullet.rotation= get_angle_to(target.global_position)
+
+
+func _on_area_exited(area):
+	if area == target:
+		print("target matches")
+		target = get_target()
+	if area.is_in_group("Enemy") and is_placed == true:
+		if area in targets:
+			print("remove enemy from list")
+			targets.erase(area)
+		

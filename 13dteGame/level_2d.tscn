@@ -29,10 +29,10 @@ autostart = true
 [node name="StrongWaveTimerStart" type="Timer" parent="Path2DandSpawner"]
 wait_time = 10.0
 one_shot = true
-autostart = true
 
 [node name="StrongTimer" type="Timer" parent="Path2DandSpawner/StrongWaveTimerStart"]
 wait_time = 5.0
+autostart = true
 
 [node name="TowerController" type="Node2D" parent="."]
 script = ExtResource("4_yofgj")

@@ -1,5 +1,5 @@
 extends PathFollow2D
-@export var health = 2
+@export var health = 1
 @export var money_value = 20
 @export var speed :float = 0.1
 
@@ -21,7 +21,7 @@ func damage(dmg = 1):
 		queue_free()
 		PlayerStats.add_money(money_value)
 		PlayerStats.enemys_killed += 1
-		print(PlayerStats.enemys_killed)
+		
 
 
 func _on_area_2d_area_entered(area):
