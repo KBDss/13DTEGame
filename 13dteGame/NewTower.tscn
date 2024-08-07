@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bjye1pxnu2m86"]
 
-[node name="PathFollow2D" type="PathFollow2D"]
+[node name="StrongTower" type="PathFollow2D"]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 

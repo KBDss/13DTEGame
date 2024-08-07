@@ -1,11 +1,13 @@
 extends Area2D
 @export var damage = 1
 @export var speed = 500
+var target
 #var speed = 10
 #var target
 ## Called when the node enters the scene tree for the first time.
 #
 func _process(delta):
+	#look_at(target.global_position) #homing missile
 	position += transform.x * speed * delta
 #func set_target(v):
 	#target = v

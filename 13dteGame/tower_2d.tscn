@@ -22,6 +22,7 @@ wait_time = 0.5
 autostart = true
 
 [node name="Targeting" type="Line2D" parent="."]
+visible = false
 default_color = Color(1, 0, 0, 1)
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]

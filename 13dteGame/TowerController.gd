@@ -1,6 +1,7 @@
 extends Node2D
 
 var tower_scene = preload("res://tower_2d.tscn")
+var strongtower_scene = preload("res://cannontower.tscn")
 var tower_instance = null
 #var placing = false
 
@@ -31,6 +32,11 @@ func _on_button_pressed():
 			add_child(tower_instance)
 			PlayerStats.money-= 100
 			
-
-	
-
+			
+func _on_strongtower_pressed():
+	if PlayerStats.money >= 200:
+		if not tower_instance:
+			tower_instance = strongtower_scene.instantiate()
+			tower_instance.place()
+			add_child(tower_instance)
+			PlayerStats.money-= 200

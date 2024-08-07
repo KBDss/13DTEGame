@@ -4,7 +4,7 @@ var is_placed = false
 const BULLET = preload("res://bullet.tscn")
 var targets = [] 
 @onready var targeting = $Targeting
-@onready var line_2d = $Line2D
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready():

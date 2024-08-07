@@ -27,7 +27,7 @@ wait_time = 3.0
 autostart = true
 
 [node name="StrongWaveTimerStart" type="Timer" parent="Path2DandSpawner"]
-wait_time = 10.0
+wait_time = 15.0
 one_shot = true
 autostart = true
 
@@ -40,25 +40,34 @@ script = ExtResource("4_yofgj")
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="MarginContainer" type="MarginContainer" parent="CanvasLayer"]
-anchors_preset = 10
+anchors_preset = 15
 anchor_right = 1.0
-offset_bottom = 35.0
+anchor_bottom = 1.0
 grow_horizontal = 2
+grow_vertical = 2
 theme_override_constants/margin_left = 4
 theme_override_constants/margin_top = 4
 theme_override_constants/margin_right = 4
 
 [node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/MarginContainer"]
 layout_mode = 2
+size_flags_horizontal = 8
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/MarginContainer/HBoxContainer"]
 layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 4
 
-[node name="Button" type="Button" parent="CanvasLayer/MarginContainer/HBoxContainer/VBoxContainer"]
+[node name="Basetower" type="Button" parent="CanvasLayer/MarginContainer/HBoxContainer/VBoxContainer"]
 custom_minimum_size = Vector2(150, 0)
 layout_mode = 2
 size_flags_horizontal = 8
 text = "Basic Tower
+"
+
+[node name="Strongtower" type="Button" parent="CanvasLayer/MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "Strong Tower
 "
 
 [node name="Control" type="Control" parent="CanvasLayer/MarginContainer/HBoxContainer"]
@@ -80,4 +89,5 @@ script = ExtResource("5_hbe2a")
 [connection signal="timeout" from="Path2DandSpawner/EngineerTimer" to="Path2DandSpawner" method="_on_timer_timeout"]
 [connection signal="timeout" from="Path2DandSpawner/StrongWaveTimerStart" to="Path2DandSpawner" method="_on_strong_wave_timer_start_timeout"]
 [connection signal="timeout" from="Path2DandSpawner/StrongWaveTimerStart/StrongTimer" to="Path2DandSpawner" method="_on_strong_timer_timeout"]
-[connection signal="pressed" from="CanvasLayer/MarginContainer/HBoxContainer/VBoxContainer/Button" to="TowerController" method="_on_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/MarginContainer/HBoxContainer/VBoxContainer/Basetower" to="TowerController" method="_on_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/MarginContainer/HBoxContainer/VBoxContainer/Strongtower" to="TowerController" method="_on_strongtower_pressed"]

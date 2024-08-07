@@ -1,5 +1,5 @@
 extends PathFollow2D
-@export var health = 7
+@export var health = 5
 @export var money_value = 15
 @export var speed :float = 0.05
 
