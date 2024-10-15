@@ -16,5 +16,3 @@ func _process(delta):
 func damage(dmg = 1):
 	health -= dmg
 	#check if health less than zero and delete from scene if so
-
-

@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://dvjs51xoe51tb"]
+[gd_scene load_steps=8 format=3 uid="uid://dvjs51xoe51tb"]
 
 [ext_resource type="Texture2D" uid="uid://db25tf7yk1u0u" path="res://Sprites/Background.PNG" id="1_umq6u"]
 [ext_resource type="Script" path="res://Path2DandSpawner.gd" id="2_u6lr0"]
 [ext_resource type="Script" path="res://TowerController.gd" id="4_yofgj"]
+[ext_resource type="Script" path="res://area_2d.gd" id="5_bg132"]
 [ext_resource type="Script" path="res://Label.gd" id="5_hbe2a"]
 
 [sub_resource type="Curve2D" id="Curve2D_4wpo5"]
@@ -10,6 +11,9 @@ _data = {
 "points": PackedVector2Array(-1.49831, 4.49492, 1.49831, -4.49492, 0, 500, 0, 0, 0, 0, 392, 497, 0, 0, 0, 0, 393, 155, 0, 0, 0, 0, 825, 155, 0, 0, 0, 0, 831, 583, 0, 0, 0, 0, 541, 585, 0, 0, 0, 0, 541, 643)
 }
 point_count = 7
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_x4kck"]
+size = Vector2(74, 26)
 
 [node name="Level2D" type="Node2D"]
 
@@ -86,8 +90,16 @@ theme_override_colors/font_color = Color(1, 1, 1, 1)
 uppercase = true
 script = ExtResource("5_hbe2a")
 
+[node name="Area2D" type="Area2D" parent="."]
+script = ExtResource("5_bg132")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(539, 665)
+shape = SubResource("RectangleShape2D_x4kck")
+
 [connection signal="timeout" from="Path2DandSpawner/EngineerTimer" to="Path2DandSpawner" method="_on_timer_timeout"]
 [connection signal="timeout" from="Path2DandSpawner/StrongWaveTimerStart" to="Path2DandSpawner" method="_on_strong_wave_timer_start_timeout"]
 [connection signal="timeout" from="Path2DandSpawner/StrongWaveTimerStart/StrongTimer" to="Path2DandSpawner" method="_on_strong_timer_timeout"]
 [connection signal="pressed" from="CanvasLayer/MarginContainer/HBoxContainer/VBoxContainer/Basetower" to="TowerController" method="_on_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/MarginContainer/HBoxContainer/VBoxContainer/Strongtower" to="TowerController" method="_on_strongtower_pressed"]
+[connection signal="area_entered" from="Area2D" to="Area2D" method="_on_area_entered"]

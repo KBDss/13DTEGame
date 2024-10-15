@@ -1,7 +1,7 @@
 extends Area2D
 var target = null
 var is_placed = false
-const BULLET = preload("res://bullet.tscn")
+const BULLET = preload("res://cannonball.tscn")
 var targets = [] 
 @onready var targeting = $Targeting
 
@@ -15,7 +15,6 @@ func _ready():
 func _process(delta):
 	if target == null and len(targets)>0:
 		get_target()
-
 		
 		#shoot at target
 func get_target():
@@ -34,8 +33,6 @@ func _on_area_entered(area):
 		#print("shoot")
 	
 
-
-
 func _on_timer_timeout():
 	if target and is_instance_valid(target):
 		var bullet = BULLET.instantiate()
@@ -47,10 +44,10 @@ func _on_timer_timeout():
 
 func _on_area_exited(area):
 	if area == target:
-		print("target matches")
+		#print("target matches")
 		target = get_target()
 	if area.is_in_group("Enemy") and is_placed == true:
 		if area in targets:
-			print("remove enemy from list")
+			#print("remove enemy from list")
 			targets.erase(area)
 		

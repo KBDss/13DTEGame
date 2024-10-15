@@ -4,7 +4,7 @@ var is_placed = false
 const BULLET = preload("res://bullet.tscn")
 var targets = [] 
 @onready var targeting = $Targeting
-@onready var line_2d = $Line2D
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -42,7 +42,10 @@ func _on_timer_timeout():
 		add_child(bullet)
 		bullet.global_position = global_position
 		bullet.rotation= get_angle_to(target.global_position)
-		#bullet.target = target #homing missile
+		bullet.target = target #homing missile
+	else:
+		if targets.size() > 0:
+			target = targets.pop_back()
 
 
 func _on_area_exited(area):
