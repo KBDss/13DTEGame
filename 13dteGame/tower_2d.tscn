@@ -1,18 +1,18 @@
 [gd_scene load_steps=4 format=3 uid="uid://dflebdevayr6k"]
 
-[ext_resource type="Texture2D" uid="uid://if1hnnjs45vv" path="res://towerpng.png" id="1_2tsit"]
-[ext_resource type="Script" path="res://tower_2d.gd" id="1_kpj0k"]
+[ext_resource type="Script" path="res://tower_2d.gd" id="1_1b34u"]
+[ext_resource type="Texture2D" uid="uid://if1hnnjs45vv" path="res://towerpng.png" id="2_baa40"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_fe8i1"]
 radius = 115.849
 
 [node name="Tower2D" type="Area2D"]
-script = ExtResource("1_kpj0k")
+script = ExtResource("1_1b34u")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
 scale = Vector2(2.13, 2.13)
-texture = ExtResource("1_2tsit")
+texture = ExtResource("2_baa40")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_fe8i1")

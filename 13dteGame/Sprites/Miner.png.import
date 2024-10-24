@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ckketo857nykw"
-path.s3tc="res://.godot/imported/MinerReal.png-75a4ab9e02a48063d3087f5118426f4a.s3tc.ctex"
+uid="uid://da40rycnekv11"
+path.s3tc="res://.godot/imported/Miner.png-358e5b18c74b0aa08d0fdacac1410472.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://MinerReal.png"
-dest_files=["res://.godot/imported/MinerReal.png-75a4ab9e02a48063d3087f5118426f4a.s3tc.ctex"]
+source_file="res://Sprites/Miner.png"
+dest_files=["res://.godot/imported/Miner.png-358e5b18c74b0aa08d0fdacac1410472.s3tc.ctex"]
 
 [params]
 

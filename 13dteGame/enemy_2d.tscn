@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://dlgkoso5brawn"]
 
-[ext_resource type="Texture2D" uid="uid://ckketo857nykw" path="res://MinerReal.png" id="1_dgfvs"]
+[ext_resource type="Texture2D" uid="uid://ckketo857nykw" path="res://Sprites/MinerReal.png" id="1_dgfvs"]
 [ext_resource type="Script" path="res://enemy_2d.gd" id="1_su362"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_g6ich"]

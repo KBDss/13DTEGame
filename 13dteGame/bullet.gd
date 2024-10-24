@@ -7,7 +7,7 @@ var target
 ## Called when the node enters the scene tree for the first time.
 #
 func _process(delta):
-	print(target)
+	#print(target)
 	if is_instance_valid(target):
 		look_at(target.global_position) #homing missile
 	position += transform.x * speed * delta

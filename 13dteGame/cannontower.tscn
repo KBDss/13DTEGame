@@ -1,25 +1,25 @@
 [gd_scene load_steps=5 format=3 uid="uid://cwjijvmm7wdln"]
 
-[ext_resource type="Script" path="res://cannontower.gd" id="1_2cxan"]
-[ext_resource type="Texture2D" uid="uid://df4pa14yg1ol2" path="res://Sprites/wheels.png" id="1_06x8x"]
-[ext_resource type="Texture2D" uid="uid://bi1hqx3ws6f86" path="res://Sprites/cannon.png" id="2_4pofh"]
+[ext_resource type="Script" path="res://cannontower.gd" id="1_13aak"]
+[ext_resource type="Texture2D" uid="uid://df4pa14yg1ol2" path="res://Sprites/wheels.png" id="2_grklg"]
+[ext_resource type="Texture2D" uid="uid://bi1hqx3ws6f86" path="res://Sprites/cannon.png" id="3_v8eut"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_uverg"]
 radius = 47.0106
 
 [node name="StrongTower" type="Area2D"]
 scale = Vector2(2.13, 2.13)
-script = ExtResource("1_2cxan")
+script = ExtResource("1_13aak")
 
 [node name="Base" type="Sprite2D" parent="."]
 texture_filter = 1
 scale = Vector2(1.295, 1.295)
-texture = ExtResource("1_06x8x")
+texture = ExtResource("2_grklg")
 
 [node name="Cannon" type="Sprite2D" parent="Base"]
 texture_filter = 1
 rotation = 0.895722
-texture = ExtResource("2_4pofh")
+texture = ExtResource("3_v8eut")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_uverg")

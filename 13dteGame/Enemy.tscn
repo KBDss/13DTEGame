@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://cy0w3l282wc2o"]
 
 [ext_resource type="Script" path="res://EnemyObject.gd" id="1_gch3w"]
-[ext_resource type="Texture2D" uid="uid://ckketo857nykw" path="res://MinerReal.png" id="2_270om"]
+[ext_resource type="Texture2D" uid="uid://ckketo857nykw" path="res://Sprites/MinerReal.png" id="2_270om"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_mh0id"]
 radius = 6.22358
