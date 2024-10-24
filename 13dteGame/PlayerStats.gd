@@ -1,5 +1,5 @@
 extends Node
-var money = 1000
+var money = 100
 var enemys_killed = 0
 
 
